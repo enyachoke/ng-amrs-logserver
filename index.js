@@ -35,7 +35,7 @@ server.route({
       logger.info(request.payload);
     }
 
-    reply('Ok');
+    reply({message:'ok'});
   },
 });
 server.ext('onPreResponse', corsHeaders);
