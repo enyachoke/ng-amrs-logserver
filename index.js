@@ -2,9 +2,8 @@ var Hapi = require('hapi');
 var corsHeaders = require('hapi-cors-headers');
 var winston = require('winston');
 var path  = require('path');
-winston.emitErrs = true;
 var server = new Hapi.Server();
-server.connection({ port: 3000, host: '0.0.0.0', routes: { cors: true}});
+server.connection({ port: process.env.PORT || 3000, host: '0.0.0.0', routes: { cors: true}});
 server.route({
   method: 'GET',
   path: '/',
